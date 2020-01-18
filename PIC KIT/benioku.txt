@@ -1,0 +1,3 @@
+proje biraz amatörce olabilir ama çok emek verdim ve kesinlikle çalýþýyor projeyi pcb karta geçirip 
+kodlarýda yüklerseniz lcd de bir menu karþýnýza çýkacak ve pcb üzerindeki özellikleri bu lcd üzerinde seçerek
+kullanabilirsiniz 
