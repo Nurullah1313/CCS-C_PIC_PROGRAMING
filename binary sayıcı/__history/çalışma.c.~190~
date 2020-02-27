@@ -1,0 +1,37 @@
+#include <çalýþma.h>
+
+#define ADC=10;
+#define CMCON=7;
+
+void main()
+{
+port_b_pullups(TRUE);
+
+set_tris_a(0x00);//yerine set_tris_a(0b00000000); yazýla bilirdi
+int x,y;
+
+x=0xFF;
+y=0xFF;
+   while(1)
+   {
+   
+  
+   output_c(y);
+   if(input(PIN_B0)==1)
+   {delay_ms(20);
+   if(input(PIN_B0)==1){
+   y=x<<1;
+   x=x<<1;
+   if(input(PIN_B0)==0)
+   {
+      output_c(y);
+   }
+   }}
+   else if (bit_test(x,7)==0){
+      x=0xFF;   
+   }
+   
+   }
+}
+
+

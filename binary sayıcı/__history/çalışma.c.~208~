@@ -1,0 +1,17 @@
+#include <çalýþma.h>
+
+  #use fast_io(a)
+  #use fast_io(b)
+   
+void main()
+{
+set_tris_a(0x01);
+set_tris_c(0xFF);
+setup_timer_1(T1_DISABLED);
+setup_timer_2(T2_DISABLED,0,1);
+setup_psp(PSP_DISABLED);
+   
+
+}
+
+

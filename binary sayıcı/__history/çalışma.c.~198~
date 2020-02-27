@@ -1,0 +1,20 @@
+#include <çalýþma.h>
+
+void main()
+{
+int a=0;
+   
+   switch (a)
+   {
+      case true :
+      { output_high(pin_b0); break;
+      }
+   if(true)
+   {   }
+   
+   }
+
+
+}
+
+

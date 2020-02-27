@@ -1,0 +1,23 @@
+[PROJECT]
+Target=çalýþma.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=çalýþma.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\NURULLAH\Desktop\Yeni klasör (2)\;C:\Users\NURULLAH\Desktop\binary sayýcý\;C:\Users\NURULLAH\Desktop\ccs c örnek\binary sayýcý\
+[C:\Users\NURULLAH\Desktop\Yeni klasör (2)\çalýþma]
+Type=4
+[mru-list]
+1=çalýþma.c
+[Opened Files]
+1=çalýþma.c
+2=
+3=
+[çalýþma.c]
+Type=4
+[Units]
+Count=1
+1=çalýþma (main)

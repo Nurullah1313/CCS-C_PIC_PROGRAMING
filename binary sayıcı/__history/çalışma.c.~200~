@@ -1,0 +1,12 @@
+#include <çalýþma.h>
+
+void main()
+{
+int a=0;
+   
+delay_ms(65536);
+
+
+}
+
+
