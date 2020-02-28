@@ -1,0 +1,78 @@
+#include <grafik.h>
+#define fast_glcd
+#include "HDM64GS12.C"
+
+#include "graphics.c"
+char yazi1[]="BOZOK";
+char yazi2[]="UNIVERSITY";
+int i,x1,y1,x2,y2;
+
+void main()
+{
+  
+   
+   glcd_init(ON);
+   
+   while(TRUE)
+   {
+      glcd_init(ON);
+      glcd_update();
+      glcd_text57(39,5,yazi1,2,ON);
+      glcd_text57(5,30,yazi2,2,ON);
+      delay_ms(2000);
+      
+      glcd_init(ON);
+      x1=5;
+      y1=5;
+      x2=100;
+      y2=5;
+      glcd_update();
+      for(i=0;i<6;i++){
+      glcd_line(x1,y1,x2,y2,ON);
+      y2=y1+=10;
+      x2-=10;
+      delay_ms(100);
+      }
+      glcd_init(ON);
+      x1=y1=10;
+      glcd_update();
+      for(i=0;i<120;i++){
+      glcd_pixel(x1,y1,ON);
+      y1=x1++;
+      delay_ms(50);
+      }
+      
+      glcd_init(ON);
+      y2=60;
+      x1=5;
+      glcd_update();
+      for(i=0;i<8;i++){
+         glcd_bar(x1,0,x1,y2,10,ON);
+         delay_ms(1000);
+         x1+=15;
+         y2-=5;
+      }
+      
+      glcd_init(ON);
+      glcd_update();
+      for(i=0;i<=30;i=i+=5){
+         glcd_circle(60,30,i, NO,NO);
+         delay_ms(1000);
+      }
+      glcd_init(ON);
+      x1=5;
+      y1=5;
+      x2=120;
+      y2=63;
+     glcd_update();
+     for(i=0;i<6;i++){
+     glcd_rect(x1,y1,x1,y2,NO,NO);
+     y1=x1+=5;
+     x2-=5;
+     y2-=5;
+     delay_ms(500);
+     }
+  
+   }
+
+}

@@ -1,0 +1,22 @@
+[PROJECT]
+Target=grafic.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=grafic.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\NURULLAH\Desktop\ccs c örnek\LCD\877 grafik lcd\
+[C:\Users\NURULLAH\Desktop\ccs c örnek\LCD\877 grafik lcd\grafic]
+Type=4
+[mru-list]
+1=grafic.c
+[Opened Files]
+1=grafic.c
+2=
+[grafic.c]
+Type=4
+[Units]
+Count=1
+1=grafic (main)

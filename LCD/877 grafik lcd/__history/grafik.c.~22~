@@ -1,0 +1,30 @@
+#include <grafik.h>
+
+
+
+#use delay(clock=20000000)
+#define FAST_GLCD////////hýzlý ekran kullanacaðýný belirtir ama bununda dez avantajý 1kb lýk ram harcamasý 
+#include <HDM64GS12.c>
+#include <graphics.c>
+
+char yazi[]="ABDULLAH";
+
+void main()
+{
+
+   setup_psp(PSP_DISABLED);        // PSP birimi devre dýþý
+   setup_timer_1(T1_DISABLED);     // T1 zamanlayýcýsý devre dýþý
+   setup_timer_2(T2_DISABLED,0,1); // T2 zamanlayýcýsý devre dýþý
+   setup_adc_ports(NO_ANALOGS);    // ANALOG giriþ yok
+   setup_adc(ADC_OFF);             // ADC birimi devre dýþý
+   setup_CCP1(CCP_OFF);            // CCP1 birimi devre dýþý
+   setup_CCP2(CCP_OFF);            // CCP2 birimi devre dýþý
+
+   glcd_init(ON); // Grafik LCD hazýrlanýyor ve ekran siliniyor
+   
+   glcd_text57(39,5,yazi,2,ON);
+   glcd_update();/////fast lcd kullandýðýn zaman ekrana verinin gelmesi için bunu kullanman lazým
+
+
+   while(1){;}        // program sonu kör döngü sonsuz bekleme
+}

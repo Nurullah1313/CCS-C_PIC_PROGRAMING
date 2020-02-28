@@ -1,0 +1,4 @@
+>>> Warning 202 "main.c" Line 13(8,12): Variable never used:   dizi
+      Memory usage:   ROM=0%      RAM=1% - 2%
+      0 Errors,  1 Warnings.
+Build Successful.

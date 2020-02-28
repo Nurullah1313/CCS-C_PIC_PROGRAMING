@@ -1,0 +1,94 @@
+#include <main.h>
+#define LCD_ENABLE_PIN PIN_B2
+#define LCD_RS_PIN PIN_B0
+#define LCD_RW_PIN PIN_B1
+#define LCD_DATA4 PIN_B3
+#define LCD_DATA5 PIN_B4
+#define LCD_DATA6 PIN_B5
+#define LCD_DATA7 PIN_B6
+
+#include <lcd.c>
+#define  LCD_DATA_PORT  getenv("SFR:PORTB")
+
+//keypad satýr ve sütunlarý pinlerle eþleþtriliyor
+#define sut1 pin_c0
+#define sut2 pin_c1
+#define sut3 pin_c2
+#define sut4 pin_c3
+
+#define sat1 pin_c4
+#define sat2 pin_c5
+#define sat3 pin_c6
+#define sat4 pin_c7
+
+char tus=0; //ekrana yazacaðamýz deðiþken
+
+char oku()//keypad'i okumak için yaptýðýmýz bir fonkksiyon
+{  
+   output_d(0x00);//keypad'in pinlerini sýfýrlýyoruz
+   
+   //satýr tarama iþlemleri yapýyoruyz
+   output_high(sat1);//1. satýrý lojik 1 yapýyoruz
+      if(input(sut1)){delay_ms(20);tus=1;}//1. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut2)){delay_ms(20);tus=2;}//2. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut3)){delay_ms(20);tus=3;}//3. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut4)){delay_ms(20);tus=0xA;}//4. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+   output_low (sat1);//1. satýrý lojik 0 yapýyoruz
+
+   output_high(sat2);//2. satýrý lojik 1 yapýyoruz
+      if(input(sut1)){delay_ms(20);tus=4;}//1. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut2)){delay_ms(20);tus=5;}//2. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut3)){delay_ms(20);tus=6;}//3. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut4)){delay_ms(20);tus=0XB;}//4. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+   output_low (sat2);//2. satýrý lojik 0 yapýyoruz
+   
+   output_high(sat3);//3. satýrý lojik 1 yapýyoruz
+      if(input(sut1)){delay_ms(20);tus=7;}//1. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut2)){delay_ms(20);tus=8;}//2. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut3)){delay_ms(20);tus=9;}//3. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut4)){delay_ms(20);tus=0XC;}//4. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+   output_low (sat3);//3. satýrý lojik 0 yapýyoruz
+   
+   output_high(sat4);//4. satýrý lojik 1 yapýyoruz
+      if(input(sut1)){delay_ms(20);tus=0XE;}//1. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut2)){delay_ms(20);tus=0;}//2. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut3)){delay_ms(20);tus=0XF;}//3. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+      if(input(sut4)){delay_ms(20);tus=0XD;}//4. sütun'u okýuyoruz gereken deðer'i tus deðiþkenine atýyoruz
+   output_low (sat4);//4. satýrý lojik 0 yapýyoruz
+   
+   return tus;//tus deðiþkenini ana fonksiyona gönderiyoruz
+}
+
+void main()//ana fonksiyon
+{
+   setup_psp(psp_disabled);
+   setup_timer_1(t1_disabled);
+   setup_timer_2(t2_disabled,0,1);
+   setup_adc_ports(no_analogs);
+   setup_adc(adc_off);
+   setup_ccp1(ccp_off);
+   setup_ccp2(ccp_off);
+   setup_comparator(nc_nc_nc_nc);
+   setup_vref(false);
+   
+   
+   set_tris_b(0x00);//b portunu çýkýþ portu olarak ayarlýyoruz
+   set_tris_c(0xFF);//c portunu giriþ portu olarak ayarlýyoruz
+   output_b(0x00);//b portunu sýfýrlýyoruz
+   output_c(0x00);//c portunu sýfýrlýyoruz
+   
+   lcd_init();//lcd'yi açýyoruz
+   printf(lcd_putc,"\fBasilan tus=");//lcd ekranýný tamizleyip "Basýlan tus="yazýyoruz Döngüye koymadýk çünkü programý yormasýný istemiyoruz
+   while(TRUE)//döngü
+   {
+    lcd_gotoxy(13,1);//kursor'u 13.satýr 1. sutuna sabitleyip ardan baþlamasýný saðlýyoruz
+    if(oku()>9)//tus deðiþkeni 9 dan büyükse ekrana aþþaðýdaki þekilde yaz
+     printf(lcd_putc,"%d",oku());
+    else//tus deðiþkeni 9 dan büyük deðilse ekrana aþþaðýdaki þekilde yaz
+     printf(lcd_putc,"%d ",oku());  
+   }
+
+}
+
+//dikkat edilirse else kýsmýnda "%d " yazýlan komut þekkildeki gibi týrnak içine fazladan bir boþluk eklenmiþtir 9 dan büyükse boþluk atýlmaz çünkü
+//9 dan büyük olunca 2 basamaklý olucaktýr eðer o boþluðu koymasaydýk örneðin ekrana 15 yazdýktan sonra 2'ye basýlýnca ekrana 25 yazardý

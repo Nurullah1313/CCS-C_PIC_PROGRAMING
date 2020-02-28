@@ -1,0 +1,12 @@
+#include <grafik.h>
+#use delay(clock=20000000)
+#include <HDM64GS12.c>
+#include <graphics.c>
+
+void main()
+{
+   glcd_init(ON);
+   char yazi[]="ABDULLAH";
+   glcd_text57(39,5,yazi,2,ON);
+}
+

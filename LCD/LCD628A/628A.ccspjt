@@ -1,0 +1,23 @@
+[PROJECT]
+Target=628A.hex
+Processor_Text=PIC16F628A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=628A.c
+[Directories]
+Include=D:\ccs c kurulu\PICC\Devices\;D:\ccs c kurulu\PICC\Drivers\;C:\Users\NURULLAH\Desktop\ccs c örnek\LCD\LCD628A\
+[C:\Users\NURULLAH\Desktop\ccs c örnek\LCD\LCD628A\628A]
+Type=4
+[mru-list]
+1=628A.c
+[Opened Files]
+1=628A.c
+2=
+3=
+[628A.c]
+Type=4
+[Units]
+Count=1
+1=628A (main)

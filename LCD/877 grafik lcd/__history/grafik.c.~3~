@@ -1,0 +1,19 @@
+#include <grafik.h>
+#include "glcd.c"
+void main()
+{
+   set_tris_b(0x00);
+   set_tris_d(0x00);
+   output_b(0x00);
+   output_d(0x00);
+   
+   glcd_init();
+   
+   glcd_line(5,15,10,25,on);
+
+   while(TRUE)
+   {
+   
+   }
+
+}

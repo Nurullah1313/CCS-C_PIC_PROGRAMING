@@ -1,0 +1,179 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-029 yazi1
+02A-02F yazi2
+030     i
+031     x1
+032     y1
+033     x2
+034     y2
+035     glcd_text57.x
+035     glcd_circle.x
+035     glcd_rect.x1
+035     glcd_bar.x1
+035     glcd_init.mode
+035     MAIN.@SCRATCH1
+036     glcd_text57.y
+036     glcd_rect.y1
+036     glcd_circle.y
+036     @delay_ms1.P1
+036     glcd_fillScreen.color
+036     glcd_bar.y1
+037-038 glcd_text57.textptr
+037     glcd_rect.x2
+037     glcd_bar.x2
+037     glcd_fillScreen.i
+037     glcd_circle.radius
+038     glcd_fillScreen.j
+038     glcd_rect.y2
+038     glcd_bar.y2
+038     glcd_circle.fill
+039     glcd_bar.width
+039     glcd_text57.size
+039     glcd_rect.fill
+039     glcd_circle.color
+039     glcd_fillScreen.@SCRATCH1
+03A     glcd_bar.color
+03A     glcd_circle.a
+03A     glcd_text57.color
+03A     glcd_rect.color
+03B     glcd_bar.half_width
+03B     glcd_rect.i
+03B     glcd_text57.j
+03B     glcd_circle.b
+03C     glcd_text57.k
+03C     glcd_circle.P
+03C     glcd_rect.xmin
+03C-03D glcd_bar.dy
+03D     glcd_text57.l
+03D     glcd_rect.xmax
+03D     glcd_circle.@SCRATCH1
+03E-03F glcd_bar.dx
+03E     glcd_text57.m
+03E     glcd_rect.ymin
+03E     glcd_circle.@SCRATCH2
+03F-043 glcd_text57.pixelData
+03F     glcd_rect.ymax
+03F     glcd_circle.@SCRATCH3
+040     glcd_bar.addx
+040     glcd_circle.@SCRATCH4
+041     glcd_line.x1
+041     glcd_bar.addy
+042     glcd_line.y1
+042     glcd_bar.j
+043     glcd_line.x2
+043-044 glcd_bar.P
+044     glcd_line.y2
+044     glcd_text57.@SCRATCH1
+045-046 glcd_bar.diff
+045     glcd_line.color
+045     glcd_text57.@SCRATCH2
+046-047 glcd_line.dy
+046     @MUL88.P1
+046     glcd_text57.@SCRATCH3
+047     @MUL88.P1
+047-048 glcd_bar.c1
+047     glcd_text57.@SCRATCH4
+048-049 glcd_line.dx
+048     glcd_text57.@SCRATCH5
+049-04A glcd_bar.c2
+04A     glcd_line.addx
+04B     glcd_bar.i
+04B     glcd_line.addy
+04C-04D glcd_bar.temp
+04C-04D glcd_line.P
+04E-04F glcd_line.diff
+04E-04F glcd_bar.temp
+050     glcd_line.i
+050     glcd_bar.@SCRATCH1
+051     glcd_pixel.x
+051     glcd_line.@SCRATCH1
+051     glcd_bar.@SCRATCH2
+052-053 @MULS1616.P1
+052     glcd_pixel.y
+053     glcd_pixel.color
+054-055 @MULS1616.P1
+054     glcd_pixel.data
+055.0   glcd_pixel.side
+056     glcd_pixel.@SCRATCH1
+056     @MULS1616.@SCRATCH1
+057     glcd_readByte.side
+057     glcd_pixel.@SCRATCH2
+057     @MULS1616.@SCRATCH2
+058     glcd_writeByte.side
+058     glcd_readByte.data
+059     glcd_writeByte.data
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  FONT.call
+00000B  FONT.data
+00010A  FONT2.call
+00010E  FONT2.data
+0001EA  glcd_writeByte
+000215  @MUL88
+00023A  glcd_init
+000281  glcd_fillScreen
+0002C7  glcd_readByte
+0002F4  glcd_pixel
+00036A  glcd_text57
+000440  @delay_ms1
+000454  glcd_line
+00050A  @MULS1616
+000538  glcd_bar
+000699  glcd_circle
+000791  glcd_rect
+000800  MAIN
+000800  @cinit1
+000809  @cinit2
+
+Project Directory:
+    C:\Users\NURULLAH\Desktop\ccs c örnek\LCD\877 grafik lcd\
+
+Project Files:
+    grafic.c                                                [22-Tem-19 15:40  CRC=765BB2B2]
+    grafic.h                                                [22-Tem-19 15:07  CRC=CF12E969]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [21-Haz-13 16:04  CRC=4E65664C]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\hdm64gs12.c [08-Tem-10 08:47  CRC=C1C373EF]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\graphics.c [06-Tem-10 08:49  CRC=70BB89DE]
+
+Source signature=370E8A12
+
+Units:
+    grafic (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   grafic.xsym
+    Errors:      grafic.err
+    Ext Symbols: grafic.esym
+    INHX8:       grafic.hex
+    Symbols:     grafic.sym
+    List:        grafic.lst
+    Debug/COFF:  grafic.cof
+    Project:     grafic.ccspjt
+    Call Tree:   grafic.tre
+    Statistics:  grafic.STA

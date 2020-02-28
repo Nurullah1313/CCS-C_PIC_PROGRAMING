@@ -1,0 +1,40 @@
+#include <main.h>
+
+void main()
+{
+      output_b(0xff);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x01);
+      output_a(0x02);
+      output_a(0x00);
+      output_a(0x03);
+      output_a(0x00);
+
+
+   while(TRUE)
+   {
+
+      
+   }
+
+}

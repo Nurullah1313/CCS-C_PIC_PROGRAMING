@@ -1,0 +1,11 @@
+#include <grafik.h>
+#include "glcd.c"
+void main()
+{
+
+   while(TRUE)
+   {
+   
+   }
+
+}

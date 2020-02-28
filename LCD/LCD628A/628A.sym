@@ -1,0 +1,88 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+006     lcdlat
+006     lcd
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01F.6   C1OUT
+01F.7   C2OUT
+021     MAIN.a
+022     lcd_getc.x
+022     lcd_init.i
+022     MAIN.@SCRATCH1
+023     lcd_putc.c
+023     lcd_getc.y
+023     lcd_init.@SCRATCH1
+024     lcd_getc.value
+024     @delay_ms1.P1
+025     lcd_gotoxy.x
+025     lcd_getc.@SCRATCH1
+026     lcd_gotoxy.y
+027     lcd_gotoxy.address
+028     lcd_gotoxy.@SCRATCH1
+029     lcd_send_byte.address
+02A     lcd_send_byte.n
+02B     lcd_read_byte.low
+02B     lcd_send_byte.@SCRATCH1
+02C     lcd_send_nibble.n
+02C     lcd_read_byte.high
+02D     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086     lcdtris
+09B-09C @READ_PROGRAM_MEMORY8.P1
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const590.call
+000019  @const591.call
+000027  @const593.call
+000038  @delay_ms1
+00004C  lcd_send_nibble
+000059  lcd_read_nibble
+00005F  lcd_read_byte
+000081  lcd_send_byte
+0000A1  lcd_init
+0000D2  lcd_gotoxy
+0000E4  lcd_putc
+000110  lcd_getc
+000122  MAIN
+000122  @cinit1
+000124  @cinit2
+
+Project Directory:
+    C:\Users\NURULLAH\Desktop\ccs c örnek\LCD\LCD628A\
+
+Project Files:
+    628A.c                                                  [15-Tem-19 16:00  CRC=16DB3F84]
+    628A.h                                                  [15-Tem-19 15:35  CRC=7DFCA5F0]
+    D:\ccs c kurulu\PICC\Devices\16F628A.h                  [21-Haz-13 16:04  CRC=FEBF88CA]
+    D:\ccs c kurulu\PICC\Drivers\lcd.c                      [23-Aðu-12 09:01  CRC=D28E8746]
+
+Source signature=38B47CCA
+
+Units:
+    628A (main)
+
+Compiler Settings:
+    Processor:      PIC16F628A
+    Pointer Size:   16
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   628A.xsym
+    Errors:      628A.err
+    Ext Symbols: 628A.esym
+    INHX8:       628A.hex
+    Symbols:     628A.sym
+    List:        628A.lst
+    Debug/COFF:  628A.cof
+    Project:     628A.ccspjt
+    Call Tree:   628A.tre
+    Statistics:  628A.STA

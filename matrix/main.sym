@@ -1,0 +1,75 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+021-025 MAIN.a
+026-02A MAIN.B
+02B-02F MAIN.C
+030-034 MAIN.D
+035-039 MAIN.E
+03A-03E MAIN.arti
+03F-043 MAIN.carpi
+044-048 MAIN.cift_ok
+049-04A matris_karakter.k
+04B     matris_karakter.tekrar
+04C     matris_karakter.i
+04D     matris_karakter.j
+04E     sutun.a
+04E     @delay_ms1.P1
+04E     matris_karakter.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  sutun
+000020  @goto10563
+000029  @delay_ms1
+00003D  matris_karakter
+000064  MAIN
+000064  @cinit1
+00006B  @cinit2
+
+Project Directory:
+    C:\Users\NURULLAH\Desktop\ccs c örnek\matrix\
+
+Project Files:
+    main.c                                                  [26-Eyl-19 12:23  CRC=9E730EAD]
+    main.h                                                  [26-Eyl-19 12:22  CRC=64D0046D]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [21-Haz-13 16:04  CRC=4E65664C]
+
+Source signature=A00DDFB2
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

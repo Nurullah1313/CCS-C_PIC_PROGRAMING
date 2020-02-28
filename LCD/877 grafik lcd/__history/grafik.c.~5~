@@ -1,0 +1,35 @@
+#include <grafik.h>
+#include "HDM64GS12.C"
+#include "graphics.c"
+
+int i,x1,y1,x2,y2;
+
+void main()
+{
+   set_tris_b(0x00);
+   set_tris_d(0x00);
+   output_b(0x00);
+   output_d(0x00);
+   
+   glcd_init(on);
+   
+   while(TRUE)
+   {
+      glcd_init(on);
+      glcd_text57(39,5,"BOZOK",2,ON);
+      glcd_text57(5,30,"UNIVERSITY",2,ON);
+      delay_ms(2000);
+      
+      glcd_initr(on);
+      x1=5;
+      y1=5;
+      x2=100;
+      y2=5;
+      
+      
+      
+      
+      
+   }
+
+}

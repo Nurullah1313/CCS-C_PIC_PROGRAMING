@@ -1,0 +1,59 @@
+
+ROM used:   368/2048 (18%)
+            368/2048 (18%) including unused fragments
+
+            0.4 Average locations per line
+            3.8 Average locations per statement
+
+RAM used:   6/224 (3%) at main() level
+            18/224 (8%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   31    12  12  628A.c
+    9     0   0  628A.h
+  508     0   0  D:\ccs c kurulu\PICC\Devices\16F628A.h
+  456    84  88  D:\ccs c kurulu\PICC\Drivers\lcd.c
+----- -----
+ 1004    96 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   5    1             @delay_ms1
+0      8   2    0    45  0.9  @const557
+0     34   9    3   596  5.9  lcd_read_byte
+0      6   2    0    59  4.2  lcd_read_nibble
+0     13   4    1   179  3.3  lcd_send_nibble
+0     32   9    3   460  4.7  lcd_send_byte
+0     49  13    2   667  5.9  lcd_init
+0     18   5    4   208  6.3  lcd_gotoxy
+0     44  12    1   354  4.7  lcd_putc
+0     18   5    4   238  4.0  lcd_getc
+0     78  21    1   351  2.3  MAIN
+0     13   4    0             @const590
+0     14   4    0             @const591
+0     17   5    0             @const593
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               10
+    Statements              96
+    Comments                192
+    Volume (V)              5008
+    Difficulty (D)          40.6
+    Effort to implement (E) 203152
+    Time to implement (T)   3 hours, 8 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   8
+    Maintainability (MI)    126
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   364  1680  
+
+
+
