@@ -1,0 +1,36 @@
+#include <main.h>
+
+void main()
+{
+set_tris_a(0x01);
+set_tris_b(0x00);
+setup_psp(psp_disabled);
+setup_ccp1(ccp_off);
+setup_ccp2(ccp_off);
+setup_timer_1(t1_disabled);
+setup_timer_2(t2_disabled,0,1);
+setup_adc_ports(no_analogs);
+setup_adc(adc_off);
+const int dizi[10]={0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09};
+
+   while(TRUE)
+   {
+      for(int i=0;i<=9;i++)
+      { 
+      for(int j=0;j<=9;j++)
+      {
+         output_high(pin_c1);
+         output_b(dizi[j]);
+         delay_ms(5);
+         output_low(pin_c1);
+         output_high(pin_c0);
+         output_b(dizi[i]);
+         delay_ms(5);
+         output_low(pin_c0);
+         delay_ms(100); 
+      }
+      
+      }
+   }
+
+}
